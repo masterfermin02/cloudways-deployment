@@ -17,8 +17,8 @@ This package requires PHP 8 or higher.
 composer require masterfermin02/cloud-ways-deploy
 ```
 # Use
-- Config your git hook [doc](https://docs.github.com/en/developers/webhooks-and-events/creating-webhooks)
-- Create a hook like this:
+- Config your git webhook [doc](https://docs.github.com/en/developers/webhooks-and-events/creating-webhooks)
+- Deploy example script:
 ```php
 <?php declare(strict_types=1);
 

@@ -35,7 +35,7 @@ class Requester
     {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
-        curl_setopt($ch, CURLOPT_URL, $this->baseURL . $endPoint);
+        curl_setopt($ch, CURLOPT_URL, $this->baseUrl . $endPoint);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
         //Set Post Parameters
