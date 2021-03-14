@@ -16,6 +16,40 @@ This package requires PHP 8 or higher.
 ```bash
 composer require masterfermin02/cloud-ways-deploy
 ```
+# Use
+- Config your git hook [doc](https://docs.github.com/en/developers/webhooks-and-events/creating-webhooks)
+- Create a hook like this:
+```php
+<?php declare(strict_types=1);
+
+require __DIR__ . '/../vendor/autoload.php';
+
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
+
+use App\Input;
+use CloudWays\Deploy\Client;
+use CloudWays\Requester;
+use CloudWays\Server;
+
+$apiKey = $_ENV['API_KEY']; // API key clouds ways key
+$API_URL = $_ENV['API_URL']; // your cloudways server api url
+$email = $_ENV['DEPLOYMENT_EMAIL']; // your email to receive notifiy on deploy finish
+$input = Input::create(array_merge($_GET, $_POST));
+
+// git web hook example url http://yourserver/deployApplication.php?server_id=1234&app_id=1234&git_url=git_url&branch_name=master&deploy_path=path_to_your_app
+$gitPullResponse = Client::create($email, $apiKey, Requester::create($API_URL))
+->execute(Server::create(
+    $input->get('server_id'),
+    $input->get('git_url'),
+    $input->get('branch_name'),
+    $input->get('app_id')
+));
+
+echo (json_encode($gitPullResponse));
+```
 
 ## Testing
 
