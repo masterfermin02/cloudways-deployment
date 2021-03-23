@@ -1,4 +1,4 @@
-<p align="center"><img src="/art/banner.png" alt="Social Card of cloudways deployment tool"></p>
+<p align="center"><img src="https://banners.beyondco.de/Cloudways%20deployment%20tool.png?theme=dark&packageManager=composer+require&packageName=masterfermin02%2Fcloud-ways-deploy&pattern=architect&style=style_1&description=A+deployment+tool+written+in+PHP+to+deploy+apps+to+cloudways.&md=1&showWatermark=1&fontSize=100px&images=cloud-upload" alt="Social Card of cloudways deployment tool"></p>
 
 # cloudways-deployment
 
